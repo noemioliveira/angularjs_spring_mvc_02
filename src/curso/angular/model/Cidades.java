@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 /**
  * Modelo que representa a tabel de cidades do banco
- * @author alex
+ * @author Noemi Oliveira
  *
  */
 @Entity

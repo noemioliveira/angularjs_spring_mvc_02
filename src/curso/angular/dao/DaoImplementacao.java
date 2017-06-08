@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import curso.angular.hibernate.HibernateUtil;
 /**
  * Implementação dos metodos padrões da interface de acesso ao banco e operações
- * @author alex
+ * @author Noemi Oliveira
  * @param <T>
  */
 @Transactional(noRollbackFor = Exception.class)

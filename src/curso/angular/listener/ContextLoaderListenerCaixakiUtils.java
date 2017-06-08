@@ -7,7 +7,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  *  Acessa todo os objetos criados pelo contexto do spring
- * @author alex
+ * @author Noemi Oliveira
  */
 //ContextLoaderListenerCaixakiUtils Acessar objetos  static do 
 //spring(não da pra fazer injeção de  dependencia) traz  objeto da memoria
