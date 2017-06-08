@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rel_pedido" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a75e4dd-2e87-4258-a6f9-67de8f12f522">
+	<property name="ireport.zoom" value="0.9090909090909091"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\noemi\\Desktop\\Ambiente_Java_07_Eclipse_Klepper_Toncat_07\\workpace_angular_spring\\angularjs_spring_mvc_02\\src\\relatorios\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="pedido" class="curso.angular.model.Pedido">
+		<fieldDescription><![CDATA[pedido]]></fieldDescription>
+	</field>
+	<field name="itens" class="java.util.ArrayList">
+		<fieldDescription><![CDATA[itens]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="149" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="10" width="201" height="41" uuid="c523b782-ae2a-462d-b659-41b70952ea16"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loja de Livro on-line]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="82" width="124" height="20" forecolor="#CC0000" backcolor="#FFFFFF" uuid="63e00b7e-3bf3-4eb4-9d4e-1713203690e6"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número do Pedido:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="82" width="100" height="20" uuid="977f69b1-c13d-473e-bd14-688e8c05a5e0"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedido}.getId()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="455" y="0" width="100" height="20" forecolor="#009966" uuid="75537428-1ac5-4cd7-adc2-7effd9b7d15e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="13" y="10" width="137" height="58" uuid="bd840fde-0bbc-4d20-8d10-97b95ef785b3"/>
+				<imageExpression><![CDATA["C:\\Users\\noemi\\Desktop\\igm-avatar\\arvore_livros.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="13" y="115" width="51" height="20" forecolor="#009966" uuid="cfbc27a8-6c7c-4894-a522-2b61dd93e993"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="426" y="115" width="40" height="20" forecolor="#FF3333" uuid="096f4513-54c8-4f62-a8ad-3c92e1bdcd52"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="77" y="115" width="160" height="20" uuid="2aec3bd3-2eb2-45b4-a1b8-52a7ffcab2c4"/>
+				<textFieldExpression><![CDATA[$F{pedido}.getCliente().getNome()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="476" y="115" width="64" height="20" forecolor="#000000" uuid="11d54288-e9ea-48e3-9edd-71ab3765900c"/>
+				<textFieldExpression><![CDATA[$F{pedido}.getValorTotal()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="139" splitType="Stretch">
+			<subreport>
+				<reportElement x="13" y="44" width="527" height="54" uuid="801496ce-4913-400e-8c57-06dc4d74e3db"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{itens})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "rel_pedido_subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="13" y="14" width="52" height="20" forecolor="#009966" uuid="2b2b8713-218f-471d-842b-1f66859779f8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="14" width="231" height="20" forecolor="#009966" uuid="743ef4c7-43c2-4d42-86a3-564ce5ba8eb6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Titulo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="426" y="14" width="114" height="20" forecolor="#009966" uuid="7545e424-d643-4d2e-b85f-16adbf3cc877"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantidade:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="8" y="0" width="547" height="1" uuid="e0ee58db-deae-450a-8415-fdd8c3d2b89c"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="521" y="30" width="34" height="20" uuid="e803d041-261d-456b-af04-81f3e186feaf"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="185" y="30" width="177" height="20" forecolor="#009966" uuid="44b0e219-7536-4ba0-a754-381e15ae3ea8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Livrarias Noemi - Obrigada!]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

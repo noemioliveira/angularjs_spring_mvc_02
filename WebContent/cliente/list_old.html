@@ -1,0 +1,51 @@
+<html ng-app="loja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<h1>Lista de clientes</h1>
+
+
+<a href="#cliente/cadastro">Novo
+<img alt="Novo" src="resources/img/add-icon.png" border="0">
+</a>
+
+<br/>
+<br/>
+<label>Filtro <input class="form-control" type="text" ng-model="filtro"></label><br>
+<br/>
+<div ng-controller="clienteController" ng-init="listarClientes(1)">
+	
+	<div class="content table-responsive table-full-width">
+		<table class="table table-striped" >
+			<thead>
+				<th>ID</th>
+				<th>Foto</th>
+				<th>Name</th>
+				<th>Endereço</th>
+				<th>Telefone</th>
+				<th>Editar</th>
+				<th>Remover</th>
+			</thead>
+			<tbody>
+			
+				<tr ng-repeat="cliente in data | filter:filtro"> 
+					<td>{{cliente.id}}</td>
+					<td><img src="{{cliente.foto}}" style="width: 40px; height: 43px"/></td>
+					<td>{{cliente.nome}}</td>
+					<td>{{cliente.endereco}}</td>
+					<td>{{cliente.telefone}}</td>
+					<th><a href="" ng-click="editarCliente(cliente.id);"><img alt="editar" src="resources/img/edit-icon.png" border="0">Editar</a></th>
+					<th><a href="" ng-click="removerCliente(cliente.id);"> <img alt="remover" src="resources/img/delete-icon.png" border="0">Remover</a></th>
+					
+				</tr>			
+			</tbody>
+		</table>
+		<div class="text-center">
+		   <button type="button" class="btn btn-info btn-fill btn-wd" ng-click="anterior();" >Anterior</button>
+		    <button type="button" class="btn btn-info btn-fill btn-wd" ng-click="proximo();">Proximo</button>
+		</div>  
+	</div>
+</div>
+
+</html>
