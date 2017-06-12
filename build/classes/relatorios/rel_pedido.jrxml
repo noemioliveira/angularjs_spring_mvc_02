@@ -48,10 +48,6 @@
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="13" y="10" width="137" height="58" uuid="bd840fde-0bbc-4d20-8d10-97b95ef785b3"/>
-				<imageExpression><![CDATA["C:\\Users\\noemi\\Desktop\\igm-avatar\\arvore_livros.jpg"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="13" y="115" width="51" height="20" forecolor="#009966" uuid="cfbc27a8-6c7c-4894-a522-2b61dd93e993"/>
 				<textElement>

@@ -38,7 +38,7 @@ ALTER TABLE ONLY usuario ALTER COLUMN id SET DEFAULT nextval('usuario_id_seq'::r
 
 
 
-INSERT INTO usuario (id, login, senha, ativo) VALUES (1, 'alex', '123', true);
+INSERT INTO usuario (id, login, senha, ativo) VALUES (1, 'Noemi', '123', true);
 
 
 
