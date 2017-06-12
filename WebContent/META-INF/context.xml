@@ -19,7 +19,7 @@
 				antiJARLocking="false"
                 antiResourceLocking="false"
 				username="postgres"
-                password="admin"
+                password="1234"
                 url="jdbc:postgresql://localhost:5432/angularjs_spring_restful?autoReconnect=true" />
          
 	<!-- http://tomee.apache.org/datasource-config.html -->	
